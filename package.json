@@ -2,7 +2,7 @@
   "name": "@price3258/node-printer",
   "description": "Node.js printer bindings",
   "version": "0.7.0",
-  "homepage": "https://github.com/thiagoelg/node-printer",
+  "homepage": "https://github.com/price3258/node-printer",
   "author": {
     "name": "Ion Lupascu",
     "url": "http://program-support.co.uk/",
@@ -14,22 +14,23 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/thiagoelg/node-printer.git"
+    "url": "git://github.com/price3258/node-printer.git"
   },
   "devDependencies": {
-    "nodeunit": "*",
-    "prebuild": "^11.0.3",
-    "prebuild-ci": "^4.0.0",
     "node-abi": "^3.8.0",
-    "patch-package": "^6.4.7"
+    "nodeunit": "*",
+    "patch-package": "^6.4.7",
+    "prebuild": "^11.0.3",
+    "prebuild-ci": "^4.0.0"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 16.0.0 <17"
   },
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
     "apply-patches": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
+    "prebuild-target": "prebuild -t 18.0.0 -r electron --force --strip --verbose --openssl_fips=X ",
     "prebuild": "prebuild",
     "rebuild": "node-gyp rebuild",
     "test": "nodeunit test"
@@ -37,7 +38,7 @@
   "binary": {
     "module_name": "node_printer",
     "module_path": "./lib/",
-    "host": "https://github.com/thiagoelg/node-printer/releases/download/",
+    "host": "https://github.com/price3258/node-printer/releases/download/",
     "remote_path": "v{version}"
   },
   "licenses": [
@@ -47,6 +48,7 @@
   ],
   "main": "./lib/printer",
   "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.10",
     "nan": "^2.15.0",
     "prebuild-install": "^7.0.1"
   },
