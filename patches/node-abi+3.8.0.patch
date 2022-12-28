@@ -7,7 +7,7 @@ index 15bbb76..8d6b059 100644
    {
      "runtime": "node",
 -    "target": "17.0.0",
-+    "target": "17.0.1",
++    "target": "16.18.1",
      "lts": false,
      "future": false,
      "abi": "102"
